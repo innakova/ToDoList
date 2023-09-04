@@ -6,4 +6,4 @@ export const TodoStatus = () => {
             <p>1 more to do, 3 done</p>
         </div>
     )
-}
+};

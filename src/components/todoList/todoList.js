@@ -1,19 +1,18 @@
 import { TodoItem } from '../todoItem/todoItem';
 import './todoList.css'
 
-export const TodoList = ({data}) => { 
-    console.log(data)
+export const TodoList = ({data, toogleDone}) => { 
 
 const elements = data.map((item) => {
-    // console.log(item)
     return (
         <li key={item.message} className='li-item'>
             <TodoItem
+                toogleDone={() => toogleDone(item.message)}
                 message={item.message}
                 important={item.important}
-                // {...item}
+                done={item.done}
             />
-            <div>
+            <div className='control-button'>
                 <button className='grean-button'>Del</button>
                 <button className='red-button'>Imp</button>
             </div>

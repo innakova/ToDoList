@@ -1,3 +1,9 @@
 .li-item {
     display: flex;
+    column-gap: 20px;
+}
+
+.control-button {
+    display: flex;
+    column-gap: 10px;
 }

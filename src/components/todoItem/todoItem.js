@@ -1,11 +1,17 @@
 import './todoItem.css'
 
-export const TodoItem = ({message, important = false}) => {
+export const TodoItem = ({message, important, done, toogleDone}) => {
     const itemStyle = {
-        color: important ? "red" : "green"
+        color: important ? "red" : "green",
+        textDecoration: done ? "line-through" : "none"
     };
 
     return (
-        <span style={itemStyle}>{message}</span>
+        <span 
+            style={itemStyle}
+            onClick={toogleDone}
+        >
+            {message}
+        </span>
     )
 };
