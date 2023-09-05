@@ -30,11 +30,27 @@ export const App = () => {
       })
     }
 
+    const toogleImp = (message) => {
+      setData((oldData) => {
+        const makeImp = oldData.map((task) =>{
+          const impToChange = task.message === message
+          if(impToChange){
+            return({
+              ...task,
+              important: !task.important
+            })
+          }
+          return task     
+        })
+        return makeImp
+      })
+    }
+
     return (
       <div>
         <Header />
         <SearchPanel />
-        <TodoList data={data} toogleDone={toogleDone} />
+        <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp}/>
       </div>
     )
 }
