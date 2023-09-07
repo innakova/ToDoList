@@ -1,7 +1,7 @@
 import { TodoItem } from '../todoItem/todoItem';
 import './todoList.css'
 
-export const TodoList = ({data, toogleDone, toogleImp}) => { 
+export const TodoList = ({data, toogleDone, toogleImp, deleteTask}) => { 
 
 const elements = data.map((item) => {
     return (
@@ -13,7 +13,7 @@ const elements = data.map((item) => {
                 done={item.done}
             />
             <div className='control-button'>
-                <button className='grean-button'>Del</button>
+                <button className='grean-button' onClick={() => deleteTask(item.message)}>Del</button>
                 <button className='red-button' onClick={() => toogleImp(item.message)}>Imp</button>
             </div>
                 

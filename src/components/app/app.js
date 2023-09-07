@@ -3,6 +3,7 @@ import { Header } from '../header/header'
 import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
 import './app.css'
+import { AddTask } from '../addTask/addTask'
 
 const initData = [
   {message: 'Drink tea', important: false, done: false },
@@ -12,7 +13,7 @@ const initData = [
 
 export const App = () => {
 
-    const [data, setData] = useState(initData)
+  const [data, setData] = useState(initData)
 
     const toogleDone = (message) => {
       setData((oldData) => {
@@ -46,11 +47,39 @@ export const App = () => {
       })
     }
 
+     const deleteTask = (message) => {
+      setData((oldData) => {
+        const deletedData = oldData.filter((task) =>{
+          const toDelete = task.message === message
+          if(toDelete){
+            return false;
+          }
+          return true     
+        })
+        return deletedData
+      })
+    }
+
+    const addTask = (message) => {
+      setData((oldData) => {
+        const addedData = [
+          ...oldData,
+          {
+            message, 
+            important: false, 
+            done: false 
+          }
+        ]
+        return addedData
+    })
+  }
+
     return (
       <div>
         <Header />
         <SearchPanel />
-        <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp}/>
+        <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
+        <AddTask addTask={addTask} />
       </div>
     )
 }
