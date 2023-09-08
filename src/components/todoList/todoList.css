@@ -1,9 +1,23 @@
 .li-item {
     display: flex;
     column-gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.task-text {
+    width: 675px;
 }
 
 .control-button {
     display: flex;
     column-gap: 10px;
+    
+}
+.grean-button {
+    background-color: #86c329;
+}
+
+.red-button {
+    background-color:#ed6666;
 }

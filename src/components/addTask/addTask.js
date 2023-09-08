@@ -6,11 +6,11 @@ export const AddTask = ({addTask}) => {
     const [taskMessage, setMessage] = useState('')
 
     return ( 
-    <div>
+    <div className='add-task-block'>
         <input value={taskMessage} onChange={(event) => {
             setMessage(event.target.value)
         }}/>
-        <button onClick={() => {
+        <button className='button-add-task add-button' onClick={() => {
             addTask(taskMessage)
             setMessage('')
         }}>Add</button>
