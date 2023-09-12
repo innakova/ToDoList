@@ -1,6 +1,7 @@
 .add-task-block {
     display: flex;
     column-gap: 10px;
+    row-gap: 10px;
 }
 
 .add-button {

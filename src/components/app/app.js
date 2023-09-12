@@ -4,6 +4,7 @@ import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
 import './app.css'
 import { AddTask } from '../addTask/addTask'
+import { AddSpecialTask } from '../addSpecialTask/addSpecialTask'
 
 const initData = [
   {message: 'Drink tea', important: false, done: false },
@@ -74,12 +75,27 @@ export const App = () => {
     })
   }
 
+    const addSpecialTask = () => {
+      setData((oldData) => {
+        const addedSpecData = [
+          ...oldData,
+          {
+            message: 'watch special film with boyfriend',
+            important:true,
+            done:false
+          }
+        ]
+        return addedSpecData
+      })
+    }
+
     return (
       <div>
         <Header />
         <SearchPanel />
         <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
         <AddTask addTask={addTask} />
+        <AddSpecialTask addSpecialTask={addSpecialTask} />
       </div>
     )
 }
