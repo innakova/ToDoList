@@ -1,10 +1,11 @@
+import './app.css'
 import { useState } from 'react'
 import { Header } from '../header/header'
 import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
-import './app.css'
 import { AddTask } from '../addTask/addTask'
 import { AddSpecialTask } from '../addSpecialTask/addSpecialTask'
+import { Calc, Counter } from '../counter/counter'
 
 const initData = [
   {message: 'Drink tea', important: false, done: false },
@@ -96,6 +97,8 @@ export const App = () => {
         <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
         <AddTask addTask={addTask} />
         <AddSpecialTask addSpecialTask={addSpecialTask} />
+        {/* <Counter /> */}
+        <Calc />
       </div>
     )
 }
