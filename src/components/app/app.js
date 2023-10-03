@@ -5,7 +5,7 @@ import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
 import { AddTask } from '../addTask/addTask'
 import { AddSpecialTask } from '../addSpecialTask/addSpecialTask'
-import { Calc, Counter, Person } from '../counter/counter'
+import { Calc, Counter, UserList} from '../counter/counter'
 
 const initData = [
   {message: 'Drink tea', important: false, done: false },
@@ -99,7 +99,7 @@ export const App = () => {
         <AddSpecialTask addSpecialTask={addSpecialTask} />
         <Counter />
         <Calc />
-        <Person />
+        <UserList />
       </div>
     )
 }
