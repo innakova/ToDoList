@@ -9,3 +9,8 @@
     width: 75px;
     
 }
+
+.active-button {
+    background-color: rgb(97, 5, 89);
+    color: black;
+}
