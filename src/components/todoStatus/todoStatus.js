@@ -1,22 +1,23 @@
 // import { useState } from 'react';
 import './todoStatus.css'
 
-export const TodoStatus = () => {
+export const TodoStatus = ({data}) => {
+console.log('dddd', data)
 
-    // const [footer, setFooter] = useState(null);
-
-    // useEffect(() => {
-    //     setFooter(
-    //       <footer>
-    //         {activeTodos.length} todos left
-    //       </footer>
-    //     );
-    //   }, [activeTodos]);
+const doneTasks = data.reduce((sum, task) => {
+    if (task.done) {
+        const incristSum = sum + 1
+        return incristSum
+    }
+    return sum
+}, 0)
+const allTasks = data.length  
+const activeTasks = allTasks - doneTasks
 
     return (
         <div>
-            {/* {footer} */}
-            <p>1 more to do, 3 done</p>
+            <p>{allTasks} total tasks</p>
+            <p>{activeTasks} more to do, {doneTasks} done</p>
         </div>
     )
 };

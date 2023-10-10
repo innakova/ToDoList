@@ -5,7 +5,7 @@ import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
 import { AddTask } from '../addTask/addTask'
 import { AddSpecialTask } from '../addSpecialTask/addSpecialTask'
-import { Calc, Counter} from '../counter/counter'
+// import { Calc, Counter} from '../counter/counter'
 
 const initData = [
   {message: 'Drink tea', important: false, done: false },
@@ -16,8 +16,11 @@ const initData = [
 export const App = () => {
 
   const [data, setData] = useState(initData)
-
   const [filter, setFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+
+
+
 
 
     const toogleDone = (message) => {
@@ -93,53 +96,33 @@ export const App = () => {
       })
     }
 
-      
-
-
-      // const showAll = () => {
-      //   setFilter('all');
-      // };
-      
-      // const showCompleted = () => {
-      //   setFilter('completed');
-      // };
-      
-      // const showActive = () => {
-      //   setFilter('active');
-      // };
-      
+            
       const filteredTasks = data.filter((task) => {
         if (filter === 'completed') {
           return task.done;
         } else if (filter === 'active') {
           return !task.done;
         }
-        return true; // Показувати всі завдання при 'all' фільтрі
-      });
-      
+        return true; 
+      });      
 
+      const searchAndFilterTasks = filteredTasks.filter((task) => {
+        return task.message.toLowerCase().includes(searchTerm.toLowerCase());
+      }
+      )
+
+    
 
 
     return (
       <div>
-        <Header />
-        <SearchPanel filter={filter} setFilter={setFilter} />
-        {/* <TodoList data={data} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} /> */}
+        <Header data={data}/>
+        <SearchPanel searchTerm={searchTerm} setSearchTerm={setSearchTerm} filter={filter} setFilter={setFilter} />
+        <TodoList data={searchAndFilterTasks} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
         <AddTask addTask={addTask} />
         <AddSpecialTask addSpecialTask={addSpecialTask} />
-        <Counter />
-        <Calc />
-        <TodoList data={filteredTasks} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
-
-          {/* <div className='filter-buttons'>
-
-            <button className='single-button button-add-task' onClick={showAll}>All</button>
-            <button className='single-button button-add-task' onClick={showCompleted}>Done</button>
-            <button className='single-button button-add-task' onClick={showActive}>Active</button>
-          </div> */}
-            
-        {/* <UserList /> */}
-        {/* <BookList /> */}
+        {/* <Counter />
+        <Calc /> */}
       </div>
     )
 }
