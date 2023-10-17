@@ -1,0 +1,5 @@
+@media (max-width:615px) {
+    .task-li-item {
+        text-align: left;
+    }
+}

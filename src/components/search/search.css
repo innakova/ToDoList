@@ -1,0 +1,19 @@
+.search-string{
+    background-color: #201e1e;
+    border-radius: 5rem;
+    height: 3.5rem;
+    width: 20rem;
+    border-style: none;
+    outline: none;
+    text-align: center;
+    color: #FFFFFF;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .search-string {
+        max-width: 40rem;
+        min-width: 25rem;
+    }
+}

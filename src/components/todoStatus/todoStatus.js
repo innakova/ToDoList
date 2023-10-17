@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import './todoStatus.css'
 
 export const TodoStatus = ({data}) => {
@@ -16,8 +15,7 @@ const activeTasks = allTasks - doneTasks
 
     return (
         <div>
-            <p>{allTasks} total tasks</p>
-            <p>{activeTasks} more to do, {doneTasks} done</p>
+            <p className='todoStatus'>{allTasks} total tasks. {activeTasks} more to do. {doneTasks} done.</p>
         </div>
     )
 };

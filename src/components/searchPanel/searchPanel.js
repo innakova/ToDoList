@@ -1,5 +1,5 @@
 import { ItemStatusFilter } from '../itemStatusFilter/itemStatusFilter';
-import { Search } from '../searchString/searchString';
+import { Search } from '../search/search';
 import './searchPanel.css'
 
 export const SearchPanel = ({filter, setFilter, searchTerm, setSearchTerm}) => {

@@ -1,9 +1,10 @@
 import { useState } from "react"
 
 export const Calc = () => {
-    const [first, setFirst]  = useState()
-    const [second, setSecond]  = useState()
-    const [result, setResult]  = useState()
+    const [first, setFirst] = useState()
+    const [second, setSecond] = useState()
+    const [result, setResult] = useState()
+
     const plus = () => {
         setResult(first + second)
     }
@@ -18,7 +19,10 @@ export const Calc = () => {
     }
     const reset = () => {
         setResult(0)
+        setFirst(0)
+        setSecond(0)
     }
+
     return (
         <div>
             <input
@@ -35,28 +39,28 @@ export const Calc = () => {
             onChange={(e) => setSecond(+e.target.value)}
             ></input>
             <h2>=</h2>
-            <h2>{result}</h2>
+            <h2>{result.toFixed(2)}</h2>
         </div>
     )
 }
 
 export const Counter = () => {
     const [res, setRes] = useState(0)
-    const dod = () => {
+    const dodat = () => {
         setRes((old) => old + 1)
     }
-    const min = () => {
+    const vidnat = () => {
         setRes((old) => old - 1)
     }
-    const reseat = () => {
+    const reseeeet = () => {
         setRes(0)
     }
     return (
         <div>
             <h2>{res}</h2>
-            <button onClick={dod}>+</button>
-            <button onClick={min}>-</button>
-            <button onClick={reseat}>*</button>
+            <button onClick={dodat}>+</button>
+            <button onClick={vidnat}>-</button>
+            <button onClick={reseeeet}>*</button>
         </div>
     )
 }

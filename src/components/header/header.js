@@ -4,7 +4,7 @@ import './header.css';
 export const Header = ({data}) => {
     return (
       <div>
-        <h1>Todo List</h1> 
+        <h1 className='main-title'>Todo List</h1> 
         <TodoStatus data={data} />
       </div>
     );

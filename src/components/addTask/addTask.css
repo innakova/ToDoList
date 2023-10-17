@@ -1,41 +1,52 @@
 .add-task-block {
-    display: flex;
-    column-gap: 10px;
-    row-gap: 10px;
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  margin: 3rem;
+}
+.add-task-input {
+  background-color: #201e1e;
+  color: #FFFFFF;
+  font-size: 1.7rem;
+  font-weight: 500;
+  border-radius: 5rem;
+  width: 30rem;
+  border-style: none;
+  outline: none;
+  text-align: center;
 }
 
 .add-button {
-    background-color: #c94276;
+    background-color: #91527d;
 }
 
-.button-add-task {
-  
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.button-add-task {  
+  border-radius: 50px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* display: inline-block; */
+    /* font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-size: 1.5rem;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    /* position: relative; */
+    text-align: center;
+    /* text-decoration: none; */
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-1:hover,
 .button-1:focus {
-  background-color: #F082AC;
+  background-color: #3d1631;
 }

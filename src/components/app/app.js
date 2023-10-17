@@ -4,13 +4,15 @@ import { Header } from '../header/header'
 import { SearchPanel } from '../searchPanel/searchPanel'
 import { TodoList } from '../todoList/todoList'
 import { AddTask } from '../addTask/addTask'
-import { AddSpecialTask } from '../addSpecialTask/addSpecialTask'
 // import { Calc, Counter} from '../counter/counter'
 
 const initData = [
-  {message: 'Drink tea', important: false, done: false },
-  {message: 'Read book', important: true, done: false },
-  {message: 'Go to park', important: false, done: true },
+  {message: 'Go for a morning run to stay active', important: false, done: false },
+  {message: 'Write a report for the meeting', important: true, done: false },
+  {message: 'Code and debug a new feature for the software project', important: true, done: true },
+  {message: 'Visit a museum', important: false, done: false },
+  {message: 'Read a book', important: true, done: false },
+  {message: 'Spend time in nature, taking a leisurely walk', important: false, done: false },
 ];
 
 export const App = () => {
@@ -81,22 +83,7 @@ export const App = () => {
         return addedData
     })
   }
-
-    const addSpecialTask = () => {
-      setData((oldData) => {
-        const addedSpecData = [
-          ...oldData,
-          {
-            message: 'watch special film with boyfriend',
-            important:true,
-            done:false
-          }
-        ]
-        return addedSpecData
-      })
-    }
-
-            
+         
       const filteredTasks = data.filter((task) => {
         if (filter === 'completed') {
           return task.done;
@@ -115,14 +102,13 @@ export const App = () => {
 
 
     return (
-      <div>
-        <Header data={data}/>
+      <div className='main-page'>
         <SearchPanel searchTerm={searchTerm} setSearchTerm={setSearchTerm} filter={filter} setFilter={setFilter} />
+        <Header data={data}/>
         <TodoList data={searchAndFilterTasks} toogleDone={toogleDone} toogleImp={toogleImp} deleteTask={deleteTask} />
-        <AddTask addTask={addTask} />
-        <AddSpecialTask addSpecialTask={addSpecialTask} />
         {/* <Counter />
         <Calc /> */}
+        <AddTask addTask={addTask} />         
       </div>
     )
 }

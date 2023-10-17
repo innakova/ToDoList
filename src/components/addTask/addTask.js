@@ -7,7 +7,7 @@ export const AddTask = ({addTask}) => {
 
     return ( 
     <div className='add-task-block'>
-        <input value={taskMessage} onChange={(event) => {
+        <input className='add-task-input'placeholder='Add a task' value={taskMessage} onChange={(event) => {
             setMessage(event.target.value)
         }}/>
         <button className='button-add-task add-button' onClick={() => {
