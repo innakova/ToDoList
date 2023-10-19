@@ -11,8 +11,7 @@ const elements = data?.map((item) => {
                 toogleDone={() => toogleDone(item.message)}
                 message={item.message}
                 important={item.important}
-                done={item.done}
-                
+                done={item.done}                
             />
             <div className='control-button'>
                 <button title='Delete' className='delete-button button-add-task' onClick={() => deleteTask(item.message)}>Del</button>

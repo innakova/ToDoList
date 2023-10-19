@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const Calc = () => {
     const [first, setFirst] = useState()
@@ -39,7 +39,7 @@ export const Calc = () => {
             onChange={(e) => setSecond(+e.target.value)}
             ></input>
             <h2>=</h2>
-            <h2>{result.toFixed(2)}</h2>
+            <h2>{result?.toFixed(2)}</h2>
         </div>
     )
 }
@@ -55,6 +55,26 @@ export const Counter = () => {
     const reseeeet = () => {
         setRes(0)
     }
+
+
+
+    useEffect (() => {
+        const intervalId = setInterval(() => {
+            if (res >= 5 && res < 30) {
+                setRes((prevNumber) => {
+                    if (prevNumber >= 30) {
+                        clearInterval(intervalId)
+                    }
+                    return prevNumber + 1
+                 });
+               }
+            }, 1000);
+            return () => clearInterval(intervalId);
+        }, [res]);
+        
+   
+
+          
     return (
         <div>
             <h2>{res}</h2>

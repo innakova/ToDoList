@@ -1,8 +1,6 @@
 import './todoStatus.css'
 
 export const TodoStatus = ({data}) => {
-console.log('dddd', data)
-
 const doneTasks = data.reduce((sum, task) => {
     if (task.done) {
         const incristSum = sum + 1
